@@ -100,8 +100,7 @@ class GraphGame extends FlameGame
   }
 
   void refreshGraphComponents() {
-    // ignore: invalid_use_of_internal_member
-    world.children.clear();
+    world.removeWhere((_) => true);
     for (var edge in graph.edges) {
       world.add(edge.component);
     }
